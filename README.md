@@ -9,8 +9,3 @@ npm run dev
 yarn
 yarn dev
 ```
-
-# Desenvolvendo Componentes
-## Header
-
-## Banner
