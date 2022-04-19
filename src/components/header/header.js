@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Router, useRouter } from 'next/router';
 import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
@@ -10,6 +11,13 @@ import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 
 export default function Header({ className }) {
+  const router = useRouter();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push('/login');
+  }
+
   return (
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
@@ -33,8 +41,9 @@ export default function Header({ className }) {
             className="donante__btn" 
             variant="secondary" 
             arial-label="Cadastrar"
+            onClick={handleClick}
           >
-            Cadastrar
+            Acessar
           </Button>
           <MobileDrawer />
         </Container>
