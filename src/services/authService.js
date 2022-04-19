@@ -1,6 +1,6 @@
 const authService = {
     async login(credenciais) {
-        return fetch('https://api-auth-dev.azurewebsites.net/Auth/Autenticar', {
+        return fetch(`${process.env.NEXT_PUBLIC_URL_AUTENTICACAO}/Auth/Autenticar`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
