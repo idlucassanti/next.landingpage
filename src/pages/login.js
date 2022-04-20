@@ -5,8 +5,8 @@ import authService from '../services/authService';
 function Login(props) {
     const router = useRouter();
     const [credenciais, setCredencias] = useState({
-        email: '',
-        password: ''
+        email: 'lucassanti_@hotmail.com',
+        password: '#Santi123'
     });
 
     function handleChange(e) {
@@ -25,15 +25,15 @@ function Login(props) {
 
     //onsubmit -> controler -> pega dados do usuário e passa para um serviço
     //authService -> serviço
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        authService
+        await authService
             .login(credenciais)
             .then(() => {
                 router.push('/home')
             })
-            .catch(() => {
-                alert('Algo deu errado na requisição, tente novamente!');
+            .catch(err => {
+                alert('Usuário ou senha inválidos');
             });
     }
 
@@ -47,8 +47,8 @@ function Login(props) {
                 type="submit" 
                 onSubmit={handleSubmit}
             >
-                <input name='email' label='E-mail' onChange={handleChange}/>
-                <input name='password' label='Senha' onChange={handleChange}/>
+                <input name='email' label='E-mail' onChange={handleChange} value={credenciais.email}/>
+                <input name='password' label='Senha' onChange={handleChange} value={credenciais.password}/>
                 <button>Entrar</button>
             </form>
             <pre>

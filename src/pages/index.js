@@ -18,7 +18,7 @@ export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
         <Layout>
-          <SEO title="sancati - Soluções e Tecnologia" />
+          <SEO title="sancati - Soluções e Tecnologia para Imobiliárias" />
           <Banner />
           <KeyFeature />
           <ServiceSection />

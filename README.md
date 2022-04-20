@@ -1,11 +1,14 @@
-## Getting Started
+# Pages
+- WebSite
+- Login
+- Register
+- Home
 
-Install the dependencies and run the development server
+# Services
+- authService
 
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
+# Promisses
+
+fetch
+
+axios
